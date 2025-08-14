@@ -74,7 +74,7 @@ To obtain your MongoDB Atlas connection string, log in to your Atlas account, na
 To start the server, use the following command:
 Bash
 npm start
-The server will now be running at http://localhost:5000.
+The server will now be running at http://localhost:3000.
 
 🧑‍💻 Enrollment ID
 Infinicode Student ID: 1401/INFI25/038
