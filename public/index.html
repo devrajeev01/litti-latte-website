@@ -16,43 +16,50 @@
 
 <body class="font-sans text-gray-800 bg-[#fefcf9]">
 
-    <!-- Navbar -->
-    <header class="bg-[#393939] text-white fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
-            <a href="/" class="text-xl font-bold">Litti Latte</a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-[#c0a080]">Home</a>
-                <a href="#about" class="hover:text-[#c0a080]">About</a>
-                <a href="#menu" class="hover:text-[#c0a080]">Menu</a>
-                <a href="/contact" class="hover:text-[#c0a080]">Contact</a>
-            </nav>
+   <!-- Navbar -->
+<header class="bg-[#393939] text-white fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+        <a href="/" class="text-xl font-bold">Litti Latte</a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="/" class="hover:text-[#c0a080]">Home</a>
+            <a href="#about" class="hover:text-[#c0a080]">About</a>
+            <a href="#menu" class="hover:text-[#c0a080]">Menu</a>
+            <a href="/contact" class="hover:text-[#c0a080]">Contact</a>
+        </nav>
 
-            <div class="flex items-center space-x-4">
-                <!-- Cart Icon -->
-                <div class="relative">
-                    <i class="fa-solid fa-cart-shopping text-white text-xl">
-                        <span id="cart-count"
-                            class="absolute -top-2 -right-2 text-xs bg-red-500 px-1 rounded-full">0</span>
-                    </i>
-                </div>
+        <div class="flex items-center space-x-4">
+            <!-- Sign Up & Login Buttons -->
+            <a href="/signup" class="hidden md:inline-block bg-[#c0a080] text-white px-4 py-2 rounded hover:bg-white hover:text-[#3e2c23] transition">Sign Up</a>
+            <a href="/login" class="hidden md:inline-block bg-transparent border border-[#c0a080] text-[#c0a080] px-4 py-2 rounded hover:bg-[#c0a080] hover:text-white transition">Login</a>
 
-                <!-- Hamburger -->
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="focus:outline-none text-white text-xl">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+            <!-- Cart Icon -->
+            <div class="relative">
+                <i class="fa-solid fa-cart-shopping text-white text-xl">
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 text-xs bg-red-500 px-1 rounded-full">0</span>
+                </i>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none text-white text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-            <a href="/" class="block py-2">Home</a>
-            <a href="#about" class="block py-2">About</a>
-            <a href="#menu" class="block py-2">Menu</a>
-            <a href="/contact" class="block py-2">Contact</a>
-        </div>
-    </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <a href="/" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#menu" class="block py-2">Menu</a>
+        <a href="/contact" class="block py-2">Contact</a>
+        <!-- Sign Up & Login for Mobile -->
+        <a href="/signup" class="block py-2 bg-[#c0a080] text-white text-center rounded mt-2">Sign Up</a>
+        <a href="/login" class="block py-2 border border-[#c0a080] text-[#c0a080] text-center rounded mt-2">Login</a>
+    </div>
+</header>
 
     <!-- Hero -->
     <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center pt-20"

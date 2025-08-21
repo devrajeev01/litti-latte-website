@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= user.name %> | Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-black to-[#3b2f2f] text-white font-sans min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-[#1c1c1c] text-[#d4a373] p-4 flex justify-between items-center flex-wrap shadow-md">
+    <a href="/" class="text-2xl font-bold tracking-wide hover:text-[#b5835a] transition">Litti Latte</a>
+    <a href="/logout"
+      class="bg-[#d4a373] text-black px-4 py-2 mt-2 sm:mt-0 rounded-lg font-medium hover:bg-[#b5835a] transition">
+      Logout
+    </a>
+  </nav>
+
+  <!-- Main container -->
+  <div class="w-full px-4 sm:px-6 lg:px-8 mt-6 sm:mt-12">
+    <div class="bg-[#2a2a2a] shadow-xl rounded-2xl p-4 sm:p-8 w-full sm:max-w-3xl mx-auto">
+
+      <!-- Profile Section -->
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+        <img src="<%= user.avatar || 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png' %>" 
+             alt="Profile Picture"
+             class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-[#d4a373] shadow-md">
+
+        <div class="text-center sm:text-left break-words">
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#d4a373]"><%= user.name %></h2>
+          <p class="text-gray-300 text-sm sm:text-base break-words"><%= user.email %></p>
+        </div>
+      </div>
+
+      <div class="mt-6 sm:mt-8 border-t border-gray-700 pt-4 sm:pt-6">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#d4a373] mb-2">Favorite Coffee</h3>
+        <p class="text-gray-200 text-sm sm:text-base"><%= user.favoriteCoffee || "Not set yet" %></p>
+      </div>
+
+      <div class="mt-6 sm:mt-8 border-t border-gray-700 pt-4 sm:pt-6">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#d4a373] mb-2">Order History</h3>
+        <% if (orders && orders.length > 0) { %>
+        <ul class="list-disc pl-5 sm:pl-6 text-gray-200 space-y-2 text-sm sm:text-base">
+          <% orders.forEach(order => { %>
+          <li>
+            <span class="font-bold text-[#d4a373]"><%= order.item %></span> - 
+            <%= order.quantity %> cups - 
+            <em class="text-gray-400 text-xs sm:text-sm"><%= order.date.toDateString() %></em>
+          </li>
+          <% }) %>
+        </ul>
+        <% } else { %>
+        <p class="text-gray-500 italic text-sm sm:text-base">No orders yet.</p>
+        <% } %>
+      </div>
+
+      <div class="mt-6 sm:mt-10 text-center">
+        <a href="/" 
+           class="bg-[#d4a373] text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-[#b5835a] transition text-sm sm:text-base inline-block w-full sm:w-auto text-center">
+             Buy Coffee
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
